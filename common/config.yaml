@@ -1,0 +1,12 @@
+#mysql相关
+mysql:
+    infor: 5.6
+    host: 192.168.202.1
+    port: 3306
+    user: root
+    password: mypassword
+    dbname: mysql
+
+
+
+
