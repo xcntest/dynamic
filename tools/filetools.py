@@ -15,7 +15,7 @@ class AttrDict:
         #允许修改属性
         raise NotImplementedError
 
-   # TODO:复习一下repr魔术方法
+   # TODO:repr魔术方法
     def __repr__(self):
         return "<AttrDict {}>".format(self.__dict__)
 
@@ -24,7 +24,14 @@ class AttrDict:
         return len(self.__dict__)
 
 
+
+
+
+
+
+
 if __name__ == '__main__':
     d = {'mysql':{'host':'192.168.51.126'}}
     a = AttrDict(d['mysql'])
     print(a.host)
+

@@ -1,0 +1,23 @@
+coltype:
+      casename: coltype
+      sql: select column_name,data_type from information_schema.columns where table_name='mask_all_types' and table_schema='joytest'
+
+
+alltypes:
+    casename: alltypes
+    sql: select * from mask_all_types where id = 'normal'
+
+charcheck:
+    casename: charcheck
+    sql: select COL_1_char from mask_all_types where id = 'normal'
+
+
+allregulations:
+    casename: allregulations
+    sql: select * from mask_all_regulations limit 1;
+
+
+
+
+
+

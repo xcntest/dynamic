@@ -7,32 +7,37 @@
 
 import yaml
 from pathlib import Path
-#调试用，需删除
 from tools import filetools
+from common import logger
+import os
 
 
 #读取yaml文件
-def read_yaml(filepath):
+def read_yaml(filepath,section:str):
     """
     :param filepath: 文件路径
     :return: 文件内容
     """
     #拼接根目录+文件子路径
-    filename = Path.cwd().parent.joinpath(filepath)
+    loger = logger.Log()
+    filename = Path.cwd().joinpath(filepath)
+    print(Path.cwd())
+    if not Path.exists(filename):
+        loger.error("文件不存在")
+
     with open(filename) as f:
        data = yaml.load(f, Loader=yaml.FullLoader)
-       return data  # 返回的是个字典
-
-
+       try:
+            yamlinfo = filetools.AttrDict(data[section])
+       except Exception as e:
+            print(e)
+            loger.error('传入的section错误，传入值为{}'.format(e))
+    return yamlinfo # 返回的是个字典
 
 
 
 if __name__ == '__main__':
     #获取当前路径
-    filePath = Path.cwd().parent.joinpath('sqlfiles/mysqlsql/DQL.yaml')
-    print(filePath)
-    data = read_yaml(filePath)
+    filePath = Path.cwd().parent.joinpath('dbopration/config.yaml')
+    data = read_yaml(filePath,'mysql')
     print(data)
-    # #字典访问
-    # info = filetools.AttrDict(data['mysql'])
-    # print(info.host,info.port,info.dbname,info.user,info.pwd)
