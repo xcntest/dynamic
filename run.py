@@ -14,5 +14,5 @@ case_path = os.path.join(os.getcwd())
 if __name__ == '__main__':
     pytest.main(['-s', '-q', '--alluredir', './result/'])
     os.system("allure generate ./result/ -o ./allure-report/ --clean")
-    os.system("allure open -h 127.0.0.1 -p 8883 ./allure-report/")
+
 
