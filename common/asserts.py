@@ -130,7 +130,6 @@ class Pro_Result():
                         allure.attach("脱敏错误数据类型娄", str(k))
                         allure.attach("值为", str(v))
                     self.logger.info('失败的字段为{}值为{}'.format(k,v))
-
             resultlist.append(result)
         return resultlist
 
@@ -181,7 +180,6 @@ class Pro_Result():
                     with allure.step("日期类型错误字段"):
                         allure.attach("脱敏错误数据类型娄", str(k))
                         allure.attach("值为", str(v))
-
             resultlist.append(result)
         return resultlist
 

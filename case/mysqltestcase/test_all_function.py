@@ -1,8 +1,8 @@
-# -*-coding:utf-8-*-
+# -*- coding:utf-8 -*-
 '''
-@Time       : 2020/8/5 19:50
+@Time       : 2020/8/26 19:50
 @Author     : Joy
-@FileName   : test_all_types.py
+@FileName   : test_all_function.py
 '''
 
 

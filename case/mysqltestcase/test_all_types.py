@@ -1,4 +1,4 @@
-# -*-coding:utf-8-*-
+# -*- coding:utf-8 -*-
 '''
 @Time       : 2020/8/5 19:50
 @Author     : Joy
@@ -11,7 +11,7 @@ from dbopration import mysqlconn
 from common import readfiles,asserts
 
 
-@allure.feature("全字段表")
+@allure.feature('测试全字段表')
 class TestAllTypes:
 
     def setup_class(self):
