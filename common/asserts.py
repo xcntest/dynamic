@@ -158,7 +158,7 @@ class Pro_Result():
                 else:
                     result = False
                 #加入allure false内容输入出
-                with allure.step("日期类型错误字段"):
+                with allure.step("字符串类型错误字段"):
                     allure.attach("脱敏错误数据类型为", str(k))
                     allure.attach("值为", str(v))
             #判断是否为浮点型或int
@@ -168,7 +168,7 @@ class Pro_Result():
                 else:
                     result = False
                     #加入allure false内容输入出
-                    with allure.step("日期类型错误字段"):
+                    with allure.step("数字类型错误字段"):
                         allure.attach("脱敏错误数据类型为", str(k))
                         allure.attach("值为", str(v))
             #判断是否为日期类型
