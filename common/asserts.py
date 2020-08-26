@@ -132,7 +132,6 @@ class Pro_Result():
                     self.logger.info('失败的字段为{}值为{}'.format(k,v))
 
             resultlist.append(result)
-        print(resultlist)
         return resultlist
 
 
@@ -184,7 +183,6 @@ class Pro_Result():
                         allure.attach("值为", str(v))
 
             resultlist.append(result)
-        print(resultlist)
         return resultlist
 
 
