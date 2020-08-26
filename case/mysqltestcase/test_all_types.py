@@ -12,7 +12,7 @@ from common import readfiles,asserts
 
 
 @allure.feature("全字段表")
-class TestAllFUCTIONS:
+class TestAllTypes:
 
     def setup_class(self):
         # 获取数据库连接对象

@@ -12,7 +12,7 @@ from dbopration import mysqlconn
 from common import readfiles,asserts
 
 @allure.feature("mysql函数测试")
-class TestAllTypes:
+class TestAllFunctions:
 
     def setup_class(self):
         # 获取数据库连接对象
