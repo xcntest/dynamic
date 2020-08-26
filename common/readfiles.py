@@ -24,7 +24,7 @@ def read_yaml(filepath,section:str):
     if not Path.exists(filename):
         loger.error("文件不存在")
 
-    with open(filename,encoding='UTF-8') as f:
+    with open(filename,encoding='utf-8') as f:
        data = yaml.load(f)
        try:
             yamlinfo = filetools.AttrDict(data[section])

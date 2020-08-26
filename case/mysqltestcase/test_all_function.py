@@ -1,12 +1,21 @@
+# -*-coding:utf-8-*-
+'''
+@Time       : 2020/8/5 19:50
+@Author     : Joy
+@FileName   : test_all_types.py
+'''
+
+
+
 import allure
 from dbopration import mysqlconn
 from common import readfiles,asserts
 
-@allure.feature("mysqlº¯Êı²âÊÔ")
+@allure.feature("mysqlå‡½æ•°æµ‹è¯•")
 class TestAllTypes:
 
     def setup_class(self):
-        # »ñÈ¡Êı¾İ¿âÁ¬½Ó¶ÔÏó
+        # è·å–æ•°æ®åº“è¿æ¥å¯¹è±¡
         self.conninfo = readfiles.read_yaml('dbopration\config.yaml','mysql')
         self.dbconn = mysqlconn.DBOperate(self.conninfo)
         self.sqlpath = 'sqlfiles\mysqlsql\other_select.yaml'
@@ -15,234 +24,234 @@ class TestAllTypes:
     def teardown_class(self):
         self.dbconn.conn.close()
 
-    @allure.story('²âÊÔABS')
+    @allure.story('æµ‹è¯•ABS')
     def test_abs_function(self):
         assert  False not in self.asserts.assert_general('ABS')
 
-    @allure.story('²âÊÔMOD')
+    @allure.story('æµ‹è¯•MOD')
     def test_ABS_function(self):
         assert  False not in self.asserts.assert_general('MOD')
 
-    @allure.story('²âÊÔCEILING')
+    @allure.story('æµ‹è¯•CEILING')
     def test_CEILING_function(self):
         assert  False not in self.asserts.assert_general('CEILING')
 
-    @allure.story('²âÊÔROUND')
+    @allure.story('æµ‹è¯•ROUND')
     def test_ROUND_function(self):
         assert  False not in self.asserts.assert_general('ROUND')
 
-    @allure.story('²âÊÔPOW')
+    @allure.story('æµ‹è¯•POW')
     def test_POW_function(self):
         assert  False not in self.asserts.assert_general('POW')
 
-    @allure.story('²âÊÔPOWER')
+    @allure.story('æµ‹è¯•POWER')
     def test_POWER_function(self):
         assert  False not in self.asserts.assert_general('POWER')
 
-    @allure.story('²âÊÔFLOOR')
+    @allure.story('æµ‹è¯•FLOOR')
     def test_FLOOR_function(self):
         assert  False not in self.asserts.assert_general('FLOOR')
 
-    @allure.story('²âÊÔRAND')
+    @allure.story('æµ‹è¯•RAND')
     def test_RAND_function(self):
         assert  False not in self.asserts.assert_general('RAND')
 
-    @allure.story('²âÊÔASCII')
+    @allure.story('æµ‹è¯•ASCII')
     def test_ASCII_function(self):
         assert  False not in self.asserts.assert_general('ASCII')
 
-    @allure.story('²âÊÔCONCAT')
+    @allure.story('æµ‹è¯•CONCAT')
     def test_CONCAT_function(self):
         assert  False not in self.asserts.assert_general('CONCAT')
 
-    @allure.story('²âÊÔLENGTH')
+    @allure.story('æµ‹è¯•LENGTH')
     def test_LENGTH_function(self):
         assert  False not in self.asserts.assert_general('LENGTH')
 
-    @allure.story('²âÊÔLOCATE')
+    @allure.story('æµ‹è¯•LOCATE')
     def test_LOCATE_function(self):
         assert  False not in self.asserts.assert_general('LOCATE')
 
-    @allure.story('²âÊÔINSTR')
+    @allure.story('æµ‹è¯•INSTR')
     def test_INSTR_function(self):
         assert  False not in self.asserts.assert_general('INSTR')
 
-    @allure.story('²âÊÔLEFT')
+    @allure.story('æµ‹è¯•LEFT')
     def test_LEFT_function(self):
         assert  False not in self.asserts.assert_general('LEFT')
 
-    @allure.story('²âÊÔRIGHT')
+    @allure.story('æµ‹è¯•RIGHT')
     def test_RIGHT_function(self):
         assert  False not in self.asserts.assert_general('RIGHT')
 
-    @allure.story('²âÊÔSUBSTRING')
+    @allure.story('æµ‹è¯•SUBSTRING')
     def test_SUBSTRING_function(self):
         assert  False not in self.asserts.assert_general('SUBSTRING')
 
-    @allure.story('²âÊÔREPEAT')
+    @allure.story('æµ‹è¯•REPEAT')
     def test_REPEAT_function(self):
         assert  False not in self.asserts.assert_general('REPEAT')
 
-    @allure.story('²âÊÔREVERSE')
+    @allure.story('æµ‹è¯•REVERSE')
     def test_REVERSE_function(self):
         assert  False not in self.asserts.assert_general('REVERSE')
 
-    @allure.story('²âÊÔINSERT')
+    @allure.story('æµ‹è¯•INSERT')
     def test_INSERT_function(self):
         assert  False not in self.asserts.assert_general('INSERT')
 
-    @allure.story('²âÊÔLOWER')
+    @allure.story('æµ‹è¯•LOWER')
     def test_LOWER_function(self):
         assert  False not in self.asserts.assert_general('LOWER')
 
-    @allure.story('²âÊÔUPPER')
+    @allure.story('æµ‹è¯•UPPER')
     def test_UPPER_function(self):
         assert  False not in self.asserts.assert_general('UPPER')
 
-    @allure.story('²âÊÔBIN')
+    @allure.story('æµ‹è¯•BIN')
     def test_BIN_function(self):
         assert  False not in self.asserts.assert_general('BIN')
 
-    @allure.story('²âÊÔBIT_LENGTH')
+    @allure.story('æµ‹è¯•BIT_LENGTH')
     def test_BIT_LENGTH_function(self):
         assert  False not in self.asserts.assert_general('BIT_LENGTH')
 
-    @allure.story('²âÊÔCONCAT_WS')
+    @allure.story('æµ‹è¯•CONCAT_WS')
     def test_BIT_LENGTH_function(self):
         assert  False not in self.asserts.assert_general('CONCAT_WS')
 
-    @allure.story('²âÊÔELT')
+    @allure.story('æµ‹è¯•ELT')
     def test_ELT_function(self):
         assert  False not in self.asserts.assert_general('ELT')
 
-    @allure.story('²âÊÔDAY')
+    @allure.story('æµ‹è¯•DAY')
     def test_DAY_function(self):
         assert  False not in self.asserts.assert_general('DAY')
 
-    @allure.story('²âÊÔMONTH')
+    @allure.story('æµ‹è¯•MONTH')
     def test_MONTH_function(self):
         assert  False not in self.asserts.assert_general('MONTH')
 
-    @allure.story('²âÊÔYEAR')
+    @allure.story('æµ‹è¯•YEAR')
     def test_YEAR_function(self):
         assert  False not in self.asserts.assert_general('YEAR')
 
-    @allure.story('²âÊÔEXTRACT')
+    @allure.story('æµ‹è¯•EXTRACT')
     def test_EXTRACT_function(self):
         assert  False not in self.asserts.assert_general('EXTRACT')
 
-    @allure.story('²âÊÔADDDATE')
+    @allure.story('æµ‹è¯•ADDDATE')
     def test_ADDDATE_function(self):
         assert  False not in self.asserts.assert_general('ADDDATE')
 
-    @allure.story('²âÊÔDATE_FORMAT')
+    @allure.story('æµ‹è¯•DATE_FORMAT')
     def test_DATE_FORMAT_function(self):
         assert  False not in self.asserts.assert_general('DATE_FORMAT')
 
-    @allure.story('²âÊÔDATE_SUB')
+    @allure.story('æµ‹è¯•DATE_SUB')
     def test_DATE_SUB_function(self):
         assert  False not in self.asserts.assert_general('DATE_SUB')
 
-    @allure.story('²âÊÔDATEDIFF')
+    @allure.story('æµ‹è¯•DATEDIFF')
     def test_DATEDIFF_function(self):
         assert  False not in self.asserts.assert_general('DATEDIFF')
 
-    @allure.story('²âÊÔDAYNAME')
+    @allure.story('æµ‹è¯•DAYNAME')
     def test_DAYNAME_function(self):
         assert  False not in self.asserts.assert_general('DAYNAME')
 
-    @allure.story('²âÊÔDAYOFMONTH')
+    @allure.story('æµ‹è¯•DAYOFMONTH')
     def test_DAYOFMONTH_function(self):
         assert  False not in self.asserts.assert_general('DAYOFMONTH')
 
-    @allure.story('²âÊÔFROM_DAYS')
+    @allure.story('æµ‹è¯•FROM_DAYS')
     def test_FROM_DAYS_function(self):
         assert  False not in self.asserts.assert_general('FROM_DAYS')
 
-    @allure.story('²âÊÔCONVERT')
+    @allure.story('æµ‹è¯•CONVERT')
     def test_CONVERT_function(self):
         assert  False not in self.asserts.assert_general('CONVERT')
 
-    @allure.story('²âÊÔCAST')
+    @allure.story('æµ‹è¯•CAST')
     def test_CAST_function(self):
         assert  False not in self.asserts.assert_general('CAST')
 
-    @allure.story('²âÊÔAVG')
+    @allure.story('æµ‹è¯•AVG')
     def test_AVG_function(self):
         assert  False not in self.asserts.assert_general('AVG')
 
-    @allure.story('²âÊÔCOUNT')
+    @allure.story('æµ‹è¯•COUNT')
     def test_COUNT_function(self):
         assert  False not in self.asserts.assert_general('COUNT')
 
-    @allure.story('²âÊÔSUM')
+    @allure.story('æµ‹è¯•SUM')
     def test_SUM_function(self):
         assert  False not in self.asserts.assert_general('SUM')
 
-    @allure.story('²âÊÔMIN')
+    @allure.story('æµ‹è¯•MIN')
     def test_MIN_function(self):
         assert  False not in self.asserts.assert_general('MIN')
 
-    @allure.story('²âÊÔMAX')
+    @allure.story('æµ‹è¯•MAX')
     def test_MAX_function(self):
         assert  False not in self.asserts.assert_general('MAX')
 
-    @allure.story('²âÊÔCASE')
+    @allure.story('æµ‹è¯•CASE')
     def test_CASE_function(self):
         assert  False not in self.asserts.assert_general('CASE')
 
-    @allure.story('²âÊÔIF')
+    @allure.story('æµ‹è¯•IF')
     def test_IF_function(self):
         assert  False not in self.asserts.assert_general('IF')
 
-    @allure.story('²âÊÔLIMIT')
+    @allure.story('æµ‹è¯•LIMIT')
     def test_LIMIT_function(self):
         assert  False not in self.asserts.assert_general('LIMIT')
 
-    @allure.story('²âÊÔLIKE')
+    @allure.story('æµ‹è¯•LIKE')
     def test_LIKE_function(self):
         assert  False not in self.asserts.assert_general('LIKE')
 
-    @allure.story('²âÊÔIN')
+    @allure.story('æµ‹è¯•IN')
     def test_IN_function(self):
         assert  False not in self.asserts.assert_general('IN')
 
-    @allure.story('²âÊÔNOT_IN')
+    @allure.story('æµ‹è¯•NOT_IN')
     def test_NOT_IN_function(self):
         assert  False not in self.asserts.assert_general('NOT_IN')
 
-    @allure.story('²âÊÔBETWEEN_AND')
+    @allure.story('æµ‹è¯•BETWEEN_AND')
     def test_BETWEEN_AND_function(self):
         assert  False not in self.asserts.assert_general('BETWEEN_AND')
 
-    @allure.story('²âÊÔNORMAL_JOIN')
+    @allure.story('æµ‹è¯•NORMAL_JOIN')
     def test_NORMAL_JOIN_function(self):
         assert  False not in self.asserts.assert_general('NORMAL_JOIN')
 
-    @allure.story('²âÊÔINNER_JOIN')
+    @allure.story('æµ‹è¯•INNER_JOIN')
     def test_INNER_JOIN_function(self):
         assert  False not in self.asserts.assert_general('INNER_JOIN')
 
-    @allure.story('²âÊÔLEFT_JOIN')
+    @allure.story('æµ‹è¯•LEFT_JOIN')
     def test_INNER_JOIN_function(self):
         assert  False not in self.asserts.assert_general('LEFT_JOIN')
 
-    @allure.story('²âÊÔLEFT_JOIN')
+    @allure.story('æµ‹è¯•LEFT_JOIN')
     def test_LEFT_JOIN_function(self):
         assert  False not in self.asserts.assert_general('LEFT_JOIN')
 
-    @allure.story('²âÊÔUNION')
+    @allure.story('æµ‹è¯•UNION')
     def test_UNION_function(self):
         assert  False not in self.asserts.assert_general('UNION')
 
-    @allure.story('²âÊÔwhere_clause')
+    @allure.story('æµ‹è¯•where_clause')
     def test_where_clause_function(self):
         assert  False not in self.asserts.assert_general('where_clause')
 
-    @allure.story('²âÊÔDISTINCT')
+    @allure.story('æµ‹è¯•DISTINCT')
     def test_DISTINCT_function(self):
         assert  False not in self.asserts.assert_general('DISTINCT')
 
-    @allure.story('²âÊÔLONG_SQL')
+    @allure.story('æµ‹è¯•LONG_SQL')
     def test_LONG_SQL_function(self):
         assert  False not in self.asserts.assert_general('LONG_SQL')
