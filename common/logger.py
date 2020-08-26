@@ -18,17 +18,17 @@ dir = os.path.join(os.path.split(os.path.dirname(__file__))[0],'Logs')
 #没有logs创建logs文件夹
 tools.mk_dir(dir)
 
-handlers = {logging.NOTSET: os.path.join(dir, 'notset.log'),
+handlers = {logging.NOTSET: os.path.join(dir, 'notset.txt'),
 
-            logging.DEBUG: os.path.join(dir, 'debug.log'),
+            logging.DEBUG: os.path.join(dir, 'debug.txt'),
 
-            logging.INFO: os.path.join(dir, 'info.log'),
+            logging.INFO: os.path.join(dir, 'info.txt'),
 
-            logging.WARNING: os.path.join(dir, 'warning.log'),
+            logging.WARNING: os.path.join(dir, 'warning.txt'),
 
-            logging.ERROR: os.path.join(dir, 'error.log'),
+            logging.ERROR: os.path.join(dir, 'error.txt'),
 
-            logging.CRITICAL: os.path.join(dir, 'critical.log'),
+            logging.CRITICAL: os.path.join(dir, 'critical.txt'),
             }
 
 
@@ -38,8 +38,8 @@ def createHandlers():
     for level in logLevels:
         path = os.path.abspath(handlers[level])
         #这里定义写入日志的方法，覆盖写还是追加写
-        # handlers[level] = RotatingFileHandler(path, maxBytes=10000, backupCount=2, encoding='utf-8')
-        handlers[level] = logging.FileHandler(path,mode='w+')
+        handlers[level] = RotatingFileHandler(path, maxBytes=10000, backupCount=2, encoding='GBK')
+        # handlers[level] = logging.FileHandler(path)
 
 
 # 加载模块时创建全局变量

@@ -126,4 +126,6 @@ dmypy.json
 
 #logs文件
 Logs/
+allure-report/
+result/
 

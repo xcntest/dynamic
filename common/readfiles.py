@@ -21,12 +21,11 @@ def read_yaml(filepath,section:str):
     #拼接根目录+文件子路径
     loger = logger.Log()
     filename = Path.cwd().joinpath(filepath)
-    print(Path.cwd())
     if not Path.exists(filename):
         loger.error("文件不存在")
 
-    with open(filename) as f:
-       data = yaml.load(f, Loader=yaml.FullLoader)
+    with open(filename,encoding='UTF-8') as f:
+       data = yaml.load(f)
        try:
             yamlinfo = filetools.AttrDict(data[section])
        except Exception as e:
@@ -38,6 +37,6 @@ def read_yaml(filepath,section:str):
 
 if __name__ == '__main__':
     #获取当前路径
-    filePath = Path.cwd().parent.joinpath('dbopration/config.yaml')
+    filePath = Path.cwd().parent.joinpath('dbopration\config.yaml')
     data = read_yaml(filePath,'mysql')
     print(data)

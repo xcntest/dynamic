@@ -1,23 +1,121 @@
+#这里要增加最大值最小值和空值的校验
 coltype:
       casename: coltype
       sql: select column_name,data_type from information_schema.columns where table_name='mask_all_types' and table_schema='joytest'
 
-
 alltypes:
     casename: alltypes
-    sql: select * from mask_all_types where id = 'normal'
+    sql: select * from mask_all_types where id = 'normal';
 
 charcheck:
     casename: charcheck
-    sql: select COL_1_char from mask_all_types where id = 'normal'
+    sql: select COL_1_char from mask_all_types where id = 'normal';
+
+varcharcheck:
+    casename: varcharcheck
+    sql: select mt.COL_2_varchar from mask_all_types as mt;
+
+binarycheck:
+    casename: binarycheck
+    sql: select mt.COL_3_binary from mask_all_types as mt;
+
+varbinarycheck:
+    casename: varbinarycheck
+    sql: select mt.COL_4_varbinary  from mask_all_types as mt;
+
+tinyblobcheck:
+  casename: tinyblobcheck
+  sql: select mt.COL_5_tinyblob from mask_all_types as mt;
+
+blobcheck:
+    casename: blobcheck
+    sql: select mt.COL_6_blob from mask_all_types as mt;
 
 
-allregulations:
-    casename: allregulations
-    sql: select * from mask_all_regulations limit 1;
+mediumblobcheck:
+    casename: mediumblobcheck
+    sql: select mt.COL_8_mediumblob from mask_all_types as mt;
 
+longblobcheck:
+    casename: longblobcheck
+    sql: select mt.id,mt.COL_9_longblob from mask_all_types as mt;
 
+tinytextcheck:
+    casename: tinytextcheck
+    sql: select mt.id,mt.COL_10_tinytext from mask_all_types as mt;
 
+textcheck:
+    casename: textcheck
+    sql: select mt.id,mt.COL_11_text from mask_all_types as mt;
 
+mediumtextcheck:
+    casename: mediumtextcheck
+    sql: select mt.id,mt.COL_12_mediumtext from mask_all_types as mt;
 
+longtextcheck:
+    casename: longtextcheck
+    sql: select mt.id,mt.COL_13_longtext from mask_all_types as mt;
 
+enumcheck:
+    casename: enumcheck
+    sql: select mt.id,mt.COL_14_enum from mask_all_types as mt;
+
+bitcheck:
+    casename: bitcheck
+    sql: select mt.id,mt.COL_16_bit from mask_all_types as mt;
+
+tinyintcheck:
+    casename: tinyintcheck
+    sql: select mt.id,mt.COL_17_tinyint from mask_all_types as mt;
+
+smallintcheck:
+    casename: smallintcheck
+    sql: select mt.id,mt.COL_18_smallint from mask_all_types as mt;
+
+mediumintcheck:
+    casename: mediumintcheck
+    sql: select mt.id,mt.COL_19_mediumint from mask_all_types as mt;
+
+intcheck:
+    casename: intcheck
+    sql: select mt.id,mt.COL_20_int from mask_all_types as mt;
+
+integercheck:
+    casename: integercheck
+    sql: select mt.id,mt.COL_21_integer from mask_all_types as mt;
+
+bigintcheck:
+    casename: bigintcheck
+    sql: select mt.id,mt.COL_22_bigint from mask_all_types as mt;
+
+serialcheck:
+    casename: serialcheck
+    sql: select mt.id,mt.COL_23_serial from mask_all_types as mt;
+
+datecheck:
+    casename: datecheck
+    sql: select mt.id,mt.COL_24_date from mask_all_types as mt;
+
+timecheck:
+    casename: timecheck
+    sql: select mt.id,mt.COL_25_time from mask_all_types as mt;
+
+datetimecheck:
+    casename: datetimecheck
+    sql: select mt.id,mt.COL_26_datetime from mask_all_types as mt;
+
+yearcheck:
+    casename: yearcheck
+    sql: select mt.id,mt.COL_27_year from mask_all_types as mt;
+
+timestampcheck:
+    casename: timestampcheck
+    sql: select mt.id,mt.COL_28_timestamp from mask_all_types as mt;
+
+numericcheck:
+    casename: numericcheck
+    sql: select mt.id,mt.COL_29_numeric from mask_all_types as mt;
+
+decimalcheck:
+    casename: decimalcheck
+    sql: select mt.id,mt.COL_30_decimal from mask_all_types as mt;

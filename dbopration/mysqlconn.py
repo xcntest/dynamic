@@ -7,7 +7,6 @@
 
 import pymysql
 from common import readfiles
-from tools import filetools
 from common import logger
 
 class DBOperate:
@@ -24,6 +23,7 @@ class DBOperate:
                                     user = self.conninfo.user,
                                     passwd = conninfo.pwd,
                                     charset = 'utf8')
+            cursor = self.conn.cursor()
             self.logger.info("连接成功")
         except Exception as e:
             self.logger.error("连接失败，失败原因为{}".format(e))

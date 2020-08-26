@@ -1,0 +1,337 @@
+#数据函数
+ABS:
+      casename: ABS
+      sql: select ABS(salary_int) as 绝对值 from mask_salaries where salary_int = '41291';
+
+MOD:
+      casename: MOD
+      sql: SELECT MOD(salary_int,3) as 取模 from mask_salaries where emp_no_int = '10001';
+
+CEILING:
+      casename: CEILING
+      sql: SELECT CEILING(mat.COL_30_decimal) as ceili from mask_all_types as mat;
+
+ROUND:
+      casename: ROUND
+      sql: SELECT ROUND(COL_30_decimal) as round  from mask_all_types as mat;
+
+POW:
+      casename: POW
+      sql: SELECT POW(COL_30_decimal,3) as POW  from mask_all_types as mat;
+
+POWER:
+      casename: POWER
+      sql: SELECT POWER(COL_30_decimal,3) as POWER  from mask_all_types as mat;
+
+FLOOR:
+      casename: FLOOR
+      sql: SELECT FLOOR(COL_30_decimal) as FLOOR  from mask_all_types as mat;
+
+RAND:
+      casename: RAND
+      sql: SELECT FLOOR(7+RAND(COL_30_decimal)*5) as rand  from mask_all_types as mat;
+
+#字符串函数
+ASCII:
+      casename: ASCII
+      sql: select ASCII(me.emp_no_int),ASCII(me.dept_no_char),ASCII(me.name_varchar),ASCII(me.cellphone_varchar),ASCII(me.birth_date_data) from mask_employees as me;
+
+CONCAT:
+      casename: CONCAT
+      sql: SELECT CONCAT(me.name_varchar,me.cellphone_varchar,me.emp_no_int) as 字符连接 from mask_employees as me;
+
+LENGTH:
+      casename: LENGTH
+      sql: SELECT LENGTH(me.emp_no_int),LENGTH(me.dept_no_char),LENGTH(me.name_varchar),LENGTH(me.cellphone_varchar),LENGTH(me.birth_date_data) from mask_employees as me;
+
+LOCATE:
+      casename: LOCATE
+      sql: SELECT LOCATE('188',me.cellphone_varchar) as 包含,LOCATE('1899',me.cellphone_varchar) as 包含 from mask_employees as me;
+
+INSTR:
+      casename: INSTR
+      sql: SELECT INSTR(me.cellphone_varchar,'5') as substr位置 from mask_employees as me;
+
+LEFT:
+      casename: LEFT
+      sql: SELECT LEFT(me.cellphone_varchar,'4') as substr位置 from mask_employees as me;
+
+RIGHT:
+      casename: RIGHT
+      sql: SELECT RIGHT(me.cellphone_varchar,'4') as substr位置 from mask_employees as me;
+
+SUBSTRING:
+      casename: SUBSTRING
+      sql: SELECT SUBSTRING(me.cellphone_varchar,'4') as substr位置 from mask_employees as me;
+
+REPEAT:
+      casename: REPEAT
+      sql: SELECT repeat(me.name_varchar,'3') from mask_employees as me;
+
+REVERSE:
+      casename: REVERSE
+      sql: SELECT REVERSE(me.name_varchar) from mask_employees as me;
+
+INSERT:
+      casename: INSERT
+      sql: SELECT INSERT(me.name_varchar,2,2,'全能测试') from mask_employees as me;
+
+LOWER:
+      casename: LOWER
+      sql: select LOWER(md.dept_name_varchar) from mask_departments as md;
+
+UPPER:
+      casename: UPPER
+      sql: select UPPER(md.dept_name_varchar) from mask_departments as md;
+
+BIN:
+      casename: BIN
+      sql: select BIN(salary_int) FROM mask_salaries;
+
+BIT_LENGTH:
+      casename: BIT_LENGTH
+      sql: SELECT BIT_LENGTH(name_varchar)from mask_employees;
+
+CONCAT_WS:
+      casename: CONCAT_WS
+      sql: SELECT CONCAT_WS('',name_varchar,NULL,cellphone_varchar) from mask_employees;
+
+ELT:
+      casename: ELT
+      sql: SELECT ELT(1,name_varchar,'str1','str12','str3') from mask_employees;
+
+#日期和时间函数
+DAY:
+      casename: DAY
+      sql: SELECT day(me.birth_date_data) from mask_employees as me;
+
+MONTH:
+      casename: MONTH
+      sql: SELECT month(me.birth_date_data) from mask_employees as me;
+
+YEAR:
+      casename: YEAR
+      sql: SELECT year(me.birth_date_data) from mask_employees as me;
+
+EXTRACT:
+      casename: EXTRACT
+      sql: SELECT EXTRACT(year from me.birth_date_data) as 提取年 from mask_employees as me;
+
+ADDDATE:
+      casename: ADDDATE
+      sql: SELECT DATE_ADD(me.birth_date_data, INTERVAL 62 DAY) from mask_employees as me;
+
+DATE_FORMAT:
+      casename: DATE_FORMAT
+      sql: SELECT DATE_FORMAT(birth_date_data,'%W %M %Y') from mask_employees;
+
+DATE_SUB:
+      casename: DATE_SUB
+      sql: select DATE_SUB(birth_date_data,INTERVAL 10 DAY) from  mask_employees LIMIT 1;
+
+DATEDIFF:
+      casename: DATEDIFF
+      sql: SELECT DATEDIFF(to_date_date,from_date_date) from mask_salaries LIMIT 1;
+
+DAYNAME:
+      casename: DAYNAME
+      sql: select DAYNAME(from_date_date) from mask_salaries LIMIT 1;
+
+DAYOFMONTH:
+      casename: DAYOFMONTH
+      sql: SELECT DAYOFMONTH(from_date_date),DAYOFWEEK(from_date_date),DAYOFYEAR(from_date_date) from mask_salaries LIMIT 1;
+
+FROM_DAYS:
+      casename: FROM_DAYS
+      sql: SELECT FROM_DAYS(salary_int) from mask_salaries LIMIT 1;
+
+CONVERT:
+      casename: CONVERT
+      sql: SELECT CONVERT(from_date_date, DATETIME) from mask_salaries;
+
+CAST:
+      casename: CAST
+      sql: SELECT CAST(from_date_date AS DATETIME) FROM mask_salaries;
+
+#聚合函数
+AVG:
+      casename: AVG
+      sql: SELECT AVG(msa.salary_int) as 平均值 FROM mask_salaries as msa;
+
+COUNT:
+      casename: COUNT
+      sql: SELECT COUNT(msa.salary_int) as 行总数 FROM mask_salaries as msa;
+
+SUM:
+      casename: SUM
+      sql: SELECT sum(msa.salary_int) as 总数 FROM mask_salaries as msa;
+
+MIN:
+      casename: MIN
+      sql: SELECT min(msa.salary_int) as 最小值 FROM mask_salaries as msa;
+
+MAX:
+      casename: MAX
+      sql: SELECT max(msa.salary_int) as 最大值 FROM mask_salaries as msa;
+
+#case
+CASE:
+      casename: CASE
+      sql: SELECT
+            CASE WHEN salary_int <= 1500 THEN '1'
+            WHEN salary_int > 500 AND salary_int <= 600  THEN '2'
+            WHEN salary_int > 600 AND salary_int <= 800  THEN '3'
+            WHEN salary_int > 800 AND salary_int <= 1000 THEN '4'
+            ELSE '没有这个等级' END salary_class
+            FROM    mask_salaries
+            GROUP BY
+            CASE WHEN salary_int <= 1500 THEN '1'
+            WHEN salary_int > 500 AND salary_int <= 600  THEN '2'
+            WHEN salary_int > 600 AND salary_int <= 800  THEN '3'
+            WHEN salary_int > 800 AND salary_int <= 1000 THEN '4'
+            ELSE NULL END;
+
+#IF函数
+IF:
+      casename: IF
+      sql: SELECT IF(msl.salary_int<1000,'大于值','小于值') from mask_salaries as msl;
+
+LIMIT:
+      casename: LIMIT
+      sql: SELECT * FROM mask_employees LIMIT 1000 OFFSET 5;
+
+LIKE:
+      casename: LIKE
+      sql: SELECT * from mask_employees as me where  me.name_varchar like '%2';
+
+IN:
+      casename: IN
+      sql: SELECT * from mask_departments as md where md.dept_name_varchar in('Production','Development');
+
+NOT_IN:
+      casename: NOT_IN
+      sql: SELECT * from mask_departments as md where md.dept_name_varchar not in('Production','Development');
+
+BETWEEN_AND:
+      casename: BETWEEN_AND
+      sql: SELECT * from mask_employees as me WHERE me.birth_date_data BETWEEN '1990-01-01' and '1992-12-31';
+
+NORMAL_JOIN:
+      casename: NORMAL_JOIN
+      sql:  SELECT mdm.dept_name_varchar,me.name_varchar,me.cellphone_varchar FROM mask_departments AS mdm, mask_employees AS me WHERE mdm.dept_no_char = me.dept_no_char;
+
+INNER_JOIN:
+      casename: INNER_JOIN
+      sql:  SELECT mdm.dept_no_char,me.name_varchar,me.cellphone_varchar
+            FROM mask_departments AS mdm INNER JOIN mask_employees AS me
+            ON mdm.dept_no_char = me.dept_no_char;
+
+LEFT_JOIN:
+      casename: LEFT_JOIN
+      sql:  SELECT mdm.dept_no_char,me.name_varchar,me.cellphone_varchar
+            FROM mask_departments AS mdm LEFT JOIN mask_employees AS me
+            ON mdm.dept_no_char = me.dept_no_char;
+
+RIGHT_JOIN:
+      casename: LEFT_JOIN
+      sql:  SELECT mdm.dept_no_char,me.name_varchar,me.cellphone_varchar
+            FROM mask_departments AS mdm RIGHT  JOIN mask_employees AS me
+            ON mdm.dept_no_char = me.dept_no_char;
+
+UNION:
+      casename: UNION
+      sql:  SELECT msl.emp_no_int from mask_salaries as msl WHERE msl.salary_int>210000
+            UNION all
+            SELECT me.emp_no_int from mask_employees as me where me.cellphone_varchar like '18800000010';
+
+where_clause:
+      casename: where_clause
+      sql:  SELECT ms.emp_no_int,SUM(ms.salary_int) FROM mask_salaries as ms
+            GROUP BY ms.emp_no_int
+            HAVING SUM(ms.salary_int)<126098
+            ORDER BY ms.from_date_date
+
+DISTINCT:
+      casename: DISTINCT
+      sql:  SELECT DISTINCT(mla.emp_no_int) from mask_salaries as mla where mla.from_date_date<'1986-12-16';
+
+LONG_SQL:
+      casename: LONG_SQL
+      sql:  SELECT
+            dd.emp_no_int,
+            dd.salary_int
+            FROM
+            (
+
+            SELECT
+            aa.emp_no_int,
+            aa.salary_int,
+            COUNT(aa.salary_int) AS 行总数,
+            sum(aa.salary_int) AS 总数,
+            min(aa.salary_int) AS 最小值,
+            max(aa.salary_int) AS 最大值
+            FROM
+            (
+            SELECT DISTINCT(msl.emp_no_int),
+            msl.salary_int,
+            msl.from_date_date,
+            msl.to_date_date
+            FROM
+            mask_salaries AS msl
+            WHERE
+            msl.emp_no_int IN (
+            SELECT
+            me.emp_no_int
+            FROM
+            mask_employees AS me
+            WHERE
+            me.dept_no_char = (
+            SELECT
+            dept_no_char
+            FROM
+            mask_departments
+            WHERE
+            dept_name_varchar LIKE '%nce'
+            )
+            ORDER BY
+            me.emp_no_int DESC
+            )
+            ) AS aa
+            ) as dd
+            union all
+            SELECT
+            ee.emp_no_int,
+            ee.salary_int
+            from
+            (
+            SELECT
+            ms.emp_no_int,
+            ms.salary_int,
+            ms.from_date_date,
+            ms.to_date_date
+            FROM
+            mask_salaries AS ms
+            WHERE
+            ms.emp_no_int IN (
+            SELECT
+            me.emp_no_int
+            FROM
+            mask_employees AS me
+            WHERE
+            me.dept_no_char = (
+            SELECT
+            dept_no_char
+            FROM
+            mask_departments
+            WHERE
+            dept_name_varchar LIKE '%nce'
+            )
+            ORDER BY
+            me.emp_no_int DESC
+            )
+            AND ms.from_date_date BETWEEN '1990-01-01'
+            AND '1992-12-31'
+            AND ms.salary_int >= 76780
+            GROUP BY
+            ms.emp_no_int
+            ) as ee

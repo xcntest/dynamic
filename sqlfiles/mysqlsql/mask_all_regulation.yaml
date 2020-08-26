@@ -1,0 +1,11 @@
+allregulations:
+      casename: allregulations
+      sql: select * from mask_all_regulations;
+
+
+
+
+
+
+
+
