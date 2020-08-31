@@ -1,19 +1,54 @@
-#mysql相关
+#mysql系
 mysql:
-    infor: 代理202.1
-    host: 192.168.51.126
+    infor: mysql代理202.1:3306-230.121:1031
+    host: 192.168.230.121
     port: 1031
     user: root
     pwd: mypassword
     dbname: joytest
 
-
-mysql1:
-    infor: 直连202.1
-    host: 192.168.202.1
-    port: 3306
+mariadb:
+    infor: mariadb代理202.74:4000-230.121:1034
+    host: 192.168.230.121
+    port: 1034
     user: root
-    pwd: mypassword
+    pwd: mariadb
     dbname: joytest
+
+tidb:
+    infor: TIDB代理239.141:3306-230.121:1035
+    host: 192.168.230.121
+    port: 1035
+    user: root
+    pwd: tidb
+    dbname: joytest
+
+SequoiaDB:
+    infor: 巨杉代理239.13:3306-230.121:1037
+    host: 192.168.230.121
+    port: 1037
+    user: root
+    pwd: hzmcdba
+    dbname: joytest
+
+#oracle
+Oracle:
+    infor: orcl11g代理202.2:1521-230.121:1029
+    host: 192.168.230.121
+    port: 1029
+    user: joytest
+    pwd: a
+    dbname: joytest
+    server: ORCL
+
+#server系
+SQL Server:
+    infor: SQL Server代理202.7:1433-230.121:1030
+    host: 192.168.230.121
+    port: 1030
+    user: sa
+    pwd: hzmc321#
+    dbname: joytest
+
 
 
