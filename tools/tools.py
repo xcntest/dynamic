@@ -16,6 +16,8 @@ def mk_dir(path):
 
 
 
+
+
 if __name__ == '__main__':
     dir = '/Users/xiongting/Desktop/Mask_Scripts/dynamic/Logs'
     mk_dir(dir)

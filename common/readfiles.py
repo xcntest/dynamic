@@ -9,7 +9,6 @@ import yaml
 from pathlib import Path
 from tools import filetools
 from common import logger
-import os
 
 
 #读取yaml文件
@@ -20,7 +19,12 @@ def read_yaml(filepath,section:str):
     """
     #拼接根目录+文件子路径
     loger = logger.Log()
-    filename = Path.cwd().joinpath(filepath)
+    #TODO 这里要修改一下读取方式
+    #运行main为run.py
+    #filename = Path.cwd().joinpath(filepath)
+    #运行main为非run.py
+    filename = Path.cwd().parent.joinpath(filepath)
+
     if not Path.exists(filename):
         loger.error("文件不存在")
 

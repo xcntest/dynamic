@@ -5,4 +5,17 @@
 @FileName   : conftest.py
 '''
 
+import pytest
+import requests
+import os
+from common import  logger,readfiles
+import pytest
+
+@pytest.fixture(scope="session")
+def login(request):
+    log = logger.Log()
+    url = "https://192.168.51.126/capaa/j_spring_security_check"
+
+}
+
 
