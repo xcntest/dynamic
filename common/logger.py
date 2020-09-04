@@ -10,25 +10,25 @@ import os
 import time
 from logging.handlers import RotatingFileHandler
 import logging
-from tools import tools
+from tools import makedir
 import inspect
 
 #获取当前文件的根目录，再拼接Log路径
 dir = os.path.join(os.path.split(os.path.dirname(__file__))[0],'Logs')
 #没有logs创建logs文件夹
-tools.mk_dir(dir)
+makedir.mk_dir(dir)
 
-handlers = {logging.NOTSET: os.path.join(dir, 'notset.txt'),
+handlers = {#logging.NOTSET: os.path.join(dir, 'notset.txt'),
 
-            logging.DEBUG: os.path.join(dir, 'debug.txt'),
+            logging.DEBUG: os.path.join(dir, 'debug.log'),
 
-            logging.INFO: os.path.join(dir, 'info.txt'),
+            logging.INFO: os.path.join(dir, 'info.log'),
 
-            logging.WARNING: os.path.join(dir, 'warning.txt'),
+            #logging.WARNING: os.path.join(dir, 'warning.txt'),
 
-            logging.ERROR: os.path.join(dir, 'error.txt'),
+            logging.ERROR: os.path.join(dir, 'error.log'),
 
-            logging.CRITICAL: os.path.join(dir, 'critical.txt'),
+            #logging.CRITICAL: os.path.join(dir, 'critical.txt'),
             }
 
 
@@ -85,26 +85,24 @@ class Log(object):
 
         self.__loggers[logging.ERROR].error(message)
 
-    def warning(self, message):
-        message = self.getLogMessage("warning", message)
-
-        self.__loggers[logging.WARNING].warning(message)
+    # def warning(self, message):
+    #     message = self.getLogMessage("warning", message)
+    #
+    #     self.__loggers[logging.WARNING].warning(message)
 
     def debug(self, message):
         message = self.getLogMessage("debug", message)
 
         self.__loggers[logging.DEBUG].debug(message)
 
-    def critical(self, message):
-        message = self.getLogMessage("critical", message)
-
-        self.__loggers[logging.CRITICAL].critical(message)
+    # def critical(self, message):
+    #     message = self.getLogMessage("critical", message)
+    #
+    #     self.__loggers[logging.CRITICAL].critical(message)
 
 
 if __name__ == "__main__":
     logger = Log()
     logger.debug("debug")
     logger.info("info")
-    logger.warning("warning")
     logger.error("error")
-    logger.critical("critical")

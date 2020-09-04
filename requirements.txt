@@ -1,6 +1,11 @@
-allure-pytest==2.8.12
-allure-python-commons==2.8.12
-PyMySQL==0.9.2
-PyYAML==3.13
-
-
+#安装生成requirements
+#pip install pipreqs
+#pipreqs . --encoding=utf8 --force
+requests==2.24.0
+pytest==4.5.0
+allure_python_commons==2.7.0
+baidu_aip==2.2.17.0
+Pillow==7.2.0
+pycryptodome==3.9.8
+pymysql==0.10.0
+PyYAML==5.3.1

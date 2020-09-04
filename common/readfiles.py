@@ -21,9 +21,9 @@ def read_yaml(filepath,section:str):
     loger = logger.Log()
     #TODO 这里要修改一下读取方式
     #运行main为run.py
-    #filename = Path.cwd().joinpath(filepath)
+    filename = Path.cwd().joinpath(filepath)
     #运行main为非run.py
-    filename = Path.cwd().parent.joinpath(filepath)
+    #filename = Path.cwd().parent.joinpath(filepath)
 
     if not Path.exists(filename):
         loger.error("文件不存在")
@@ -35,12 +35,13 @@ def read_yaml(filepath,section:str):
        except Exception as e:
             print(e)
             loger.error('传入的section错误，传入值为{}'.format(e))
-    return yamlinfo # 返回的是个字典
+    return yamlinfo # 返回的是个AttrDict字典
 
 
 
 if __name__ == '__main__':
     #获取当前路径
-    filePath = Path.cwd().parent.joinpath('dbopration\config.yaml')
-    data = read_yaml(filePath,'mysql')
-    print(data)
+    filePath = Path.cwd().parent.joinpath('interinfo/login.yaml')
+    print(filePath)
+    data = read_yaml(filePath,'login')
+    print(type(data.data))

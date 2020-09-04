@@ -1,15 +1,13 @@
 login:
      describe: 登录接口
      method: POST
-     vcodeurl: /capaa/v1/user/verification/image
-     publickeyurl: /capaa/js/encrypt/encrypt.json
-     loginurl: /capaa/j_spring_security_check
+     url: /capaa/j_spring_security_check
      data:
           hid:
           val:
           PIN:
           j_username: admin
-          j_password:
+          j_password: hzmcAdmin
           certManagerValue:
           verifyBodyJSON:
           J_pinCode:
@@ -18,5 +16,6 @@ login:
           verCode:
           login_style:
           authType: NORMAL
+     headers: {'Content-Type': 'application/json;charset=UTF-8'}
 
 
